@@ -1,6 +1,6 @@
 # Issue tracker: GitHub
 
-Specs and implementation tickets for Plainspoken live in GitHub Issues. Use the `gh` CLI from this checkout; its `origin` remote identifies `averyfreeman/plainspoken-content-production`.
+Specs and implementation tickets for Plainspoken live in GitHub Issues. Use `gh --repo averyfreeman/plainspoken-content-production` for issue, label, milestone, and release commands. This checkout also has an `upstream` remote, so always select the Plainspoken repository explicitly.
 
 ## Conventions
 
@@ -13,7 +13,7 @@ Specs and implementation tickets for Plainspoken live in GitHub Issues. Use the 
 
 ## Common commands
 
-- Create: `gh issue create --title "..." --body-file ... --label ready-for-agent --milestone "..."`
-- Read: `gh issue view <number> --json number,title,body,labels,milestone,state`
-- List: `gh issue list --state open`
-- Close: `gh issue close <number> --comment "Completed"`
+- Create: `gh issue create --repo averyfreeman/plainspoken-content-production --title "..." --body-file ... --label ready-for-agent --milestone "..."`
+- Read: `gh issue view <number> --repo averyfreeman/plainspoken-content-production --json number,title,body,labels,milestone,state`
+- List: `gh issue list --repo averyfreeman/plainspoken-content-production --state open`
+- Close: `gh issue close <number> --repo averyfreeman/plainspoken-content-production --comment "Completed"`
