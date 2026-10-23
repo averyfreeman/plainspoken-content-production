@@ -1,0 +1,6 @@
+It's important to note that you can run `npm test` in order to check the build.
+
+## Configuration
+
+Use `config.toml` to change the port.
+I hope this helps.

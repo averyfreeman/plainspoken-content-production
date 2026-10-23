@@ -1,0 +1,43 @@
+Plainspoken 0.2.0
+
+English adaptation of ja-writing-guard:
+  https://github.com/TakeshiTGAL/hermes-plugin-ja-writing-guard
+  Copyright (c) 2026 TakeshiTGAL
+  MIT License (LICENSE).
+
+The retained hook, deadline, attachment, tool and report infrastructure derives
+from that project. Its complete original attribution notice is preserved in
+NOTICE.upstream as a historical notice. Descriptions there of Japanese rules
+and evaluation data refer to version 0.1.0; those assets are no longer shipped.
+
+English editing guidance and catalog ideas adapted from work-humanizer:
+  https://github.com/phuryn/work-humanizer
+  Revision: 0a9065791d021f3dda695f3887cb2ae4c0eacbcf
+  Files consulted: skills/work-humanizer/SKILL.md, tells.md, check.py
+  Copyright (c) 2026 Pawel Huryn
+  MIT License.
+
+The English rules, prompts and portable skill adapt its guidance on facts,
+commitments, certainty, source reasoning, interview questions and formulaic
+wording. The corpus helper is a new implementation. This project does not
+inherit work-humanizer's evaluation results or make detector-evasion claims.
+
+The following MIT terms also apply to the adapted work-humanizer material:
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

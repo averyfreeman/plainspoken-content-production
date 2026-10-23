@@ -1,0 +1,1 @@
+<rewritten>We will release OpenDesk 2.1 on Monday. The update adds CSV export.</rewritten>

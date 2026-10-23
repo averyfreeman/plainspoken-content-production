@@ -1,0 +1,167 @@
+{
+  "kind": "synthetic_regression",
+  "scenarios": 15,
+  "matched": 15,
+  "by_surface": {
+    "business_email": 3,
+    "external": 3,
+    "sns": 3,
+    "tech_doc": 3,
+    "chat": 3
+  },
+  "results": [
+    {
+      "id": "business_email-needs_edit",
+      "surface": "business_email",
+      "expected": "needs_edit",
+      "actual": "rewrite",
+      "score": 62,
+      "matched": true,
+      "findings": [
+        "stock.note",
+        "stock.hope_helpful"
+      ]
+    },
+    {
+      "id": "business_email-acceptable",
+      "surface": "business_email",
+      "expected": "acceptable",
+      "actual": "ok",
+      "score": 0,
+      "matched": true,
+      "findings": []
+    },
+    {
+      "id": "external-needs_edit",
+      "surface": "external",
+      "expected": "needs_edit",
+      "actual": "rewrite",
+      "score": 80,
+      "matched": true,
+      "findings": [
+        "template.landscape",
+        "stock.note",
+        "stock.hope_helpful"
+      ]
+    },
+    {
+      "id": "external-acceptable",
+      "surface": "external",
+      "expected": "acceptable",
+      "actual": "ok",
+      "score": 0,
+      "matched": true,
+      "findings": []
+    },
+    {
+      "id": "sns-needs_edit",
+      "surface": "sns",
+      "expected": "needs_edit",
+      "actual": "rewrite",
+      "score": 75,
+      "matched": true,
+      "findings": [
+        "sycophancy.great_question",
+        "stock.hope_helpful"
+      ]
+    },
+    {
+      "id": "sns-acceptable",
+      "surface": "sns",
+      "expected": "acceptable",
+      "actual": "ok",
+      "score": 0,
+      "matched": true,
+      "findings": []
+    },
+    {
+      "id": "tech_doc-needs_edit",
+      "surface": "tech_doc",
+      "expected": "needs_edit",
+      "actual": "rewrite",
+      "score": 68,
+      "matched": true,
+      "findings": [
+        "stock.note",
+        "wordy.in_order",
+        "stock.hope_helpful"
+      ]
+    },
+    {
+      "id": "tech_doc-acceptable",
+      "surface": "tech_doc",
+      "expected": "acceptable",
+      "actual": "ok",
+      "score": 0,
+      "matched": true,
+      "findings": []
+    },
+    {
+      "id": "chat-needs_edit",
+      "surface": "chat",
+      "expected": "needs_edit",
+      "actual": "rewrite",
+      "score": 85,
+      "matched": true,
+      "findings": [
+        "sycophancy.great_question",
+        "stock.note",
+        "stock.hope_helpful"
+      ]
+    },
+    {
+      "id": "chat-acceptable",
+      "surface": "chat",
+      "expected": "acceptable",
+      "actual": "ok",
+      "score": 0,
+      "matched": true,
+      "findings": []
+    },
+    {
+      "id": "chat-precise",
+      "surface": "chat",
+      "expected": "acceptable",
+      "actual": "ok",
+      "score": 0,
+      "matched": true,
+      "findings": []
+    },
+    {
+      "id": "business_email-precise",
+      "surface": "business_email",
+      "expected": "acceptable",
+      "actual": "ok",
+      "score": 0,
+      "matched": true,
+      "findings": []
+    },
+    {
+      "id": "external-precise",
+      "surface": "external",
+      "expected": "acceptable",
+      "actual": "ok",
+      "score": 0,
+      "matched": true,
+      "findings": []
+    },
+    {
+      "id": "sns-precise",
+      "surface": "sns",
+      "expected": "acceptable",
+      "actual": "ok",
+      "score": 0,
+      "matched": true,
+      "findings": []
+    },
+    {
+      "id": "tech_doc-precise",
+      "surface": "tech_doc",
+      "expected": "acceptable",
+      "actual": "ok",
+      "score": 0,
+      "matched": true,
+      "findings": []
+    }
+  ]
+}

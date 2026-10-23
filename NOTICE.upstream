@@ -1,0 +1,120 @@
+ja-writing-guard
+Copyright (c) 2026 TakeshiTGAL. Licensed under the MIT License (see LICENSE).
+
+This plugin follows the structure of two earlier Japanese "AI-writing"
+skills and takes rule ideas from several other MIT-licensed projects. Phrase
+lists and patterns were rewritten as Python regular expressions in rules.py;
+the `source` field of each rule names the project it came from. The rewriting
+instructions in rewrite.py and skills/rewrite-ja/SKILL.md follow the
+principles of the first two projects below.
+
+Predecessors whose structure this plugin imitates
+-------------------------------------------------
+
+yomiyasu
+  https://github.com/nanaism/yomiyasu
+  Copyright (c) 2026 nanaism
+  MIT License
+  Used: slop vocabulary, metaphor-verb and filler patterns, the em dash /
+  trailing colon / bold / emoji checks and the same-ending-in-a-row check
+  (scripts/yomiyasu_lint.py); the meaning-preservation rules (主張・比重・
+  言い切りの強さ・文の働き, 足さない) and stance-based sentence endings (SKILL.md).
+
+natural-japanese
+  https://github.com/coji/natural-japanese
+  Copyright (c) 2026 coji
+  MIT License
+  Used: forbidden-phrase and translationese catalogs, antithesis patterns and
+  genre-specific thresholds (skills/natural-japanese/scripts/lint.py,
+  references/forbidden-patterns.md, references/translationese.md); the
+  "detection by machine, judgement by the writer" split and "do not apply a
+  fix uniformly" (SKILL.md, references/revision-guide.md); the machine-score
+  formula of references/diagnose.md is used by eval/run_eval.py to apply
+  natural-japanese's own decision rule in the comparison.
+
+Other projects rules were taken from
+------------------------------------
+
+textlint-rule-preset-ai-writing
+  https://github.com/textlint-ja/textlint-rule-preset-ai-writing
+  Copyright (c) 2025 azu — MIT License
+  Used: bold-label list items, bold-only lines, info-prefix bold labels, hype
+  expressions, 「まず最初に」, 「〜について解説します」.
+
+textlint-rule-preset-ja-technical-writing (and the bundled
+textlint-rule-ja-no-redundant-expression, textlint-rule-no-double-negative-ja)
+  https://github.com/textlint-ja/textlint-rule-preset-ja-technical-writing
+  Copyright (c) 2016 azu — MIT License
+  Copyright (c) 2015 azu (textlint-rule-no-double-negative-ja) — MIT License
+  Used: 「〜を行う」, 「〜ことができる」 for verbs other than する, double negatives.
+
+textlint-rule-preset-JTF-style
+  https://github.com/textlint-ja/textlint-rule-preset-JTF-style
+  Copyright (c) 2015 azu — MIT License
+  Used: half-width ! and ? inside Japanese text; dash checks.
+
+patina
+  https://github.com/devswha/patina
+  Copyright (c) 2025 devswha; Copyright (c) devswha and patina contributors
+  MIT License
+  Used: chatbot residue, knowledge-cutoff disclaimers, false nuance, filler,
+  empty optimism, throat-clearing, pseudo-insight, significance inflation,
+  〜的 chains, -ing style add-ons, vague sources, stiff phrases, colon reveals,
+  にとどまらず contrasts, leaked tool markup (oaicite, utm_source=chatgpt.com).
+
+japanese-humanizer
+  https://github.com/geonwoo-jeong/japanese-humanizer
+  Copyright (c) 2026 日本語ヒューマナイザー管理者 — MIT License
+  Used: masking quotes, code and URLs before matching (detector.py).
+
+humanizer-ja
+  https://github.com/gonta223/humanizer-ja
+  Copyright (c) 2025 Siqi Chen (original: blader/humanizer)
+  Copyright (c) 2026 SuguruKun_ai (Japanese version: humanizer-ja)
+  MIT License
+  Used: 「浮き彫りにしており」-style add-on phrases, empty optimism.
+
+Humanizer JP
+  https://github.com/matsutouya/humanizer-ja
+  Copyright (c) 2026 paris0001 — MIT License
+  Used: 「させていただきます」 repetition, preamble declarations.
+
+Not used: matsuikentaro1/humanizer-japanese (no license file; read only for
+the comparison table, no rules taken).
+
+Evaluation data
+---------------
+
+eval/data/*/human/ holds excerpts of human-written Japanese under their own
+terms, listed file by file in eval/data/README.md: Japanese government sites
+under the Public Data License 1.0 (PDL1.0, compatible with CC BY 4.0) or the
+Government Standard Terms of Use 2.0; Osaka City (CC BY 4.0 compatible terms);
+Aozora Bunko works whose Japanese copyright term has expired; Diet records (Copyright Act art. 40(1));
+Ruby reference manual (CC BY 3.0, rurema/doctree); cookpad/styleguide (CC BY
+3.0); freee accessibility guidelines (CC BY 4.0); Sudachi documentation
+(Apache-2.0, Copyright (c) 2017 Works Applications Co., Ltd.; text in
+eval/data/LICENSES/Apache-2.0.txt); Re:VIEW documentation (doc/* is MIT,
+Copyright (c) 2006-2019 Minero Aoki, Kenshi Muto, Masayoshi Takahashi, Masanori
+Kado; text in eval/data/LICENSES/Re-VIEW-doc-MIT.txt) and
+textlint-rule-preset-ja-technical-writing (MIT, Copyright (c) 2016 azu).
+Excerpts were trimmed (tags, navigation and footnote numbers removed). eval/data/*/ai*/ was written by an LLM for this project (MIT).
+
+The MIT License text for each project above:
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.

@@ -1,0 +1,77 @@
+name: plainspoken
+version: 0.2.0
+manifest_version: 2
+requires_hermes: ">=0.21.4"
+api_version: 1
+description: >
+  English writing checks, conservative automatic editing, and a portable skill
+  that researches a subject's previous writing, interviews them, and maintains
+  evidence-backed voice profiles. Checks are deterministic and offline. Flagged
+  replies are edited with the user's configured model, with time limits and
+  original-text fallback. Preserves source voice, factual details and code with
+  heuristic safeguards. Scores describe editing signals, not authorship.
+author: Avery Freeman
+license: MIT
+homepage: https://github.com/averyfreeman/plainspoken-content-production
+tags: [english, writing, proofreading, voice, style, editing]
+
+provides_tools:
+  - writing_check
+provides_hooks:
+  - transform_llm_output
+  - post_tool_call
+
+config_schema:
+  mode:
+    type: str
+    choices: ["off", report, enforce]
+    default: enforce
+    label: Mode
+    description: "report = check and log only, never change the answer. enforce = rewrite answers over the threshold before delivery (one or two extra calls to your model). off = do nothing."
+  surface:
+    type: str
+    choices: [chat, business_email, external, sns, tech_doc]
+    default: chat
+    label: Default surface
+    description: "Where answers go. Contexts change editing emphasis while preserving the source voice."
+  platform_surfaces:
+    type: dict
+    default: {}
+    label: Surface per platform
+    description: 'Override the surface per delivery platform, e.g. {"email": "business_email", "slack": "chat"}.'
+  threshold:
+    type: int
+    default: 0
+    label: Threshold
+    description: "Editing-signal score (0-100) at which an English answer is considered for rewriting. 0 = the surface default (chat 40, business_email 35, external 40, sns 35, tech_doc 45)."
+  max_attempts:
+    type: int
+    default: 2
+    label: Rewrite attempts
+    description: "Model calls per flagged answer in enforce mode (1-3)."
+  rewrite_timeout:
+    type: float
+    default: 20
+    label: Rewrite timeout (seconds)
+    description: "Upper limit per model call (also capped by the time left in time_budget). On timeout or error the original answer is delivered."
+  time_budget:
+    type: float
+    default: 25
+    label: Time budget (seconds)
+    description: "Whole rewrite, all attempts. Values under 5 s are raised to 5 s. Shrunk automatically to 3 s under Hermes' plugins.hook_callback_timeout (default 30 s), which abandons slower hooks. In enforce mode a flagged answer is delivered up to this much later."
+  accept_partial:
+    type: bool
+    default: false
+    label: Deliver partial rewrites
+    description: "When a rewrite lowers the score but is still over the threshold: false = deliver the original, true = deliver the improved rewrite."
+  min_chars:
+    type: int
+    default: 40
+    label: Minimum length
+    description: "Answers shorter than this are not checked."
+
+  voice_profile:
+    type: str
+    default: ""
+    label: Voice profile file
+    description: "Optional path to a saved profile.md (supports ~). Only this profile is read; an unavailable or oversized profile leaves the answer unchanged. Empty preserves the source voice."
