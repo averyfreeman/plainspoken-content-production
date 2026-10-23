@@ -21,14 +21,14 @@ The research branch is preserved as an independent history. Bring over framework
 - Indexed 71 author-provided blog posts and saved a provisional, cited profile outside the repository.
 - Validated and enabled Plainspoken in Hermes.
 - Created the public repository, clean English history, and Japanese research branch.
+- Published the public [v0.2.0 release](https://github.com/averyfreeman/plainspoken-content-production/releases/tag/v0.2.0).
+- Published the parent spec in [issue #1](https://github.com/averyfreeman/plainspoken-content-production/issues/1) and linked its child tickets.
 
-## Next work
+## Milestones and next work
 
-1. Publish the v0.2.0 release.
-2. Review the generated voice sample and calibrate the initial profile.
-3. Confirm authorship and select appropriate professional writing samples.
-4. Add a professional register and decide whether to configure the profile for automatic edits.
-5. After the writing framework is complete, design a study of acceptable writing behavior across Japanese and English cultural norms.
+- **v0.2.0 — Initial public release:** completed; issues #2–#7 are closed.
+- **Voice calibration and professional register:** issues [#8](https://github.com/averyfreeman/plainspoken-content-production/issues/8) and [#9](https://github.com/averyfreeman/plainspoken-content-production/issues/9) await author input. Issue [#10](https://github.com/averyfreeman/plainspoken-content-production/issues/10) is blocked by them.
+- **Future research — Japanese/English writing norms:** issue [#11](https://github.com/averyfreeman/plainspoken-content-production/issues/11) is deferred until the framework tickets are complete.
 
 The profile and source archive stay local. Public repository issues and release notes should describe capabilities and progress without copying personal documents or private source text.
 
